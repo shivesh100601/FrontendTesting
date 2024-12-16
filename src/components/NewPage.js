@@ -4,7 +4,7 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 
 
-const AuthForms = () => {
+const NewPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [socialMediaAuthProvider, setSocialMediaAuthProvider] = useState('');
@@ -28,7 +28,7 @@ const AuthForms = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/v1/auth/login`,
+        `https://api-fast.kreaitor.ai/api/v1/auth/test/login`,
         { username, password }
       );
       localStorage.setItem('token', response.data.token);
@@ -112,4 +112,4 @@ const AuthForms = () => {
   );
 };
 
-export default AuthForms;
+export default NewPage;
